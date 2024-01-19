@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Bowl app</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    
+</head>
+<body>
+    <div id="fishbowl" class="fishbowl">
+        <div class="fishbowl_pool"></div>
+        <div class="fishbowl_background"></div>
+        <div class="fishbowl_bottom"></div>
+        <div class="fishbowl_decoration">
+            <div class="fishbowl_seaweed fishbowl_seaweed_1"></div>
+            <div class="fishbowl_seaweed fishbowl_seaweed_2"></div>
+            <div class="fishbowl_seaweed fishbowl_seaweed_3"></div>
+        </div>
+        <div class="fishbowl_water">
+            <div id="fish" class="fishbowl_fish">
+                <div class="fishbowl_fish-tail"></div>
+            </div>
+            <div class="fishbowl_water-color"></div>
+        </div>
+        <div class="fishbowl_top"></div>
+        <div id="tap" class="fishbowl_tap">
+            <div class="fishbowl_tap-base"></div>
+            <div class="fishbowl_tap-handle"></div>
+            <div class="fishbowl_tap-stream"></div>
+            <div class="fishbowl_tap-end"></div>
+            <div class="fishbowl_tap-head"></div>
+            <div class="fishbowl_tap-text">Click to refill</div>
+        </div>
+    <div class="credit_text">Clone by <em>Numan ijaz</em></div>
+        <!-- !end of main div below -->
+    </div>
+</body>
+<script>let fill = 90;
+    let intervalId = null;
+    const fishbowl = document.getElementById('fishbowl');
+    const fish = document.getElementById('fish');
+    const tap = document.getElementById('tap');
+    
+    const emptyingFn = () => setInterval(() => {
+        fill = fill - 1;
+        fishbowl.style = `--filling: ${fill}`;
+        if (fill < 0) {
+            clearInterval(intervalId);
+        }else if (fill < 20) {
+            fish.classList.add(`fishbowl_fish-dead`);
+        }else if (fill < 50) {
+            fish.classList.add(`fishbowl_fish-dying`)
+        }else {
+            fish.classList.remove('fishbowl_fish-dyiing');
+            fish.classList.remove(`fishbowl_fish-dead`);
+        }
+    }, 200);
+    
+    intervalId = emptyingFn();
+    
+    tap.addEventListener('click', () => {
+        tap.classList.add('fishbowl_tap-active');
+        setTimeout(() => tap.classList.remove('fishbowl_tap-active'), 500);
+        if(fill <= 0) {
+            intervalId = emptyingFn();
+            fish.classList.add('fishbowl_fish-floating');
+        }
+        fill = Math.min(fill + 20, 90);
+    });</script>  
+</html>
