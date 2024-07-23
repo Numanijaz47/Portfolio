@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    /* ! montserrot font included */
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--montserrot-font);
+}
+
+/* ! variables */
+:root {
+    --montserrot-font: "Montserrat", sans-serif;
+    --rotation-230deg: rotate(230deg);
+    --rotation-30deg: rotate(50deg);
+
+}
+/* ! /variables */
+
+
+.bg-holder{
+    position: absolute;
+    min-height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+div.text-center > i {
+    transform: var(--rotation-230deg);
+}
+a.d-flex > img{
+    transform: var(--rotation-30deg);
+    position: relative;
+    top: 15px;
+}
