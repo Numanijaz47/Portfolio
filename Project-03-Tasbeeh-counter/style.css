@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'Gidole';
+    src: url('path-to-your-font/Gidole-Regular.woff2') format('woff2'),
+         url('path-to-your-font/Gidole-Regular.woff') format('woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #000;
+    color: white;
+    font-family: 'Gidole', sans-serif;
+    text-align: center;
+}
+
+/* Counter Container */
+.counter-app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    width: 40vw;
+    margin: auto;
+    margin-top: 5%;
+    flex-direction: column;
+    border-radius: 20px;
+    background-image: url(Images/bg.jpg) !important;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+/* Heading */
+.heading {
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+/* Counter Number */
+#count-el {
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, 0.459);
+    width: 100px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+/* Increment Button */
+.inc-button {
+    padding: 10px;
+    font-size: 1.5em;
+    background-color: rgb(235, 221, 33);
+    border-radius: 50%;
+    color: rgb(255, 4, 4);
+    height: 3em;
+    width: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.inc-button:active {
+    background-color: rgb(27, 94, 0);
+    color: rgb(235, 221, 33);
+}
+
+/* Bottom Message */
+.bottom-msg {
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: white;
+}
+
+/* 📱 Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    .counter-app-container {
+        width: 90vw;
+        height: auto;
+        padding: 20px;
+    }
+
+    .heading {
+        font-size: 1.5rem;
+    }
+
+    #count-el {
+        font-size: 2.5rem;
+        width: 80px;
+    }
+
+    .inc-button {
+        font-size: 1.2em;
+        height: 2.5em;
+        width: 2.5em;
+    }
+
+    .bottom-msg {
+        font-size: 0.8rem;
+    }
+}

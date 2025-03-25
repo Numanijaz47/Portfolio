@@ -1,0 +1,41 @@
+/* google fonts link */
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+html, body{
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(204, 204, 204);
+}
+
+.thick-border{
+    border: 2px solid rgb(139, 139, 139);
+    width: 80%;
+    margin-bottom: 5%;
+    margin-top: 10%;
+}
+
+main{
+   margin-inline-start: 10% ;
+}
+section {
+    margin-top: 5%;
+    margin-inline-start: 10%;
+}
+#section-1{
+    margin-top: 2%;
+}
+
+.section-heading {
+    font-size: 1.1rem;
+    color: green;
+}
+.section-sub-heading{
+    font-size:1.3rem;
+    color: rgb(50, 130, 255);
+    margin-top: 1rem;
+}
+.details{
+    /* line-height: 0.5 !important; */
+}
+
+p{
+    border: 1px solid rgb(139, 139, 139);
+}
