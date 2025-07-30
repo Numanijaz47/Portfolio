@@ -1,110 +1,124 @@
-@font-face {
-    font-family: 'Gidole';
-    src: url('path-to-your-font/Gidole-Regular.woff2') format('woff2'),
-         url('path-to-your-font/Gidole-Regular.woff') format('woff');
-}
+:root {
+            --main-color: #456;
+            --primary-text-color: #fff;
+            --main-button-color: rgb(102, 102, 255);
+            --button-font-size: 1.1rem;
+         }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
 
-html, body {
-    background-color: #000;
-    color: white;
-    font-family: 'Gidole', sans-serif;
-    text-align: center;
-}
+         body {
+            font-family: sans-serif;
+            background-color: #77BEF0;
+         }
 
-/* Counter Container */
-.counter-app-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40vh;
-    width: 40vw;
-    margin: auto;
-    margin-top: 5%;
-    flex-direction: column;
-    border-radius: 20px;
-    background-image: url(Images/bg.jpg) !important;
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-}
+         #section01 {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
 
-/* Heading */
-.heading {
-    margin-bottom: 10px;
-    font-size: 2rem;
-}
+         .container {
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGJotNe4ph5pzHKuQHkutVG_6kdkIG2fcF6g&s);
+            background-size: cover;
+            background-position: left;
+            width: 100%;
+            max-width: 450px;
+            border: 1px solid black;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+            /* box-shadow: 0 10px 25px rgba(0,0,0,0.2); */
+            background-color: white;
+         }
 
-/* Counter Number */
-#count-el {
-    font-size: 3rem;
-    background-color: rgba(0, 0, 0, 0.459);
-    width: 100px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-}
+         #title {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            padding: 0 10px;
+         }
 
-/* Increment Button */
-.inc-button {
-    padding: 10px;
-    font-size: 1.5em;
-    background-color: rgb(235, 221, 33);
-    border-radius: 50%;
-    color: rgb(255, 4, 4);
-    height: 3em;
-    width: 3em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.3s ease;
-}
+         #count-el {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px 40px;
+            border-radius: 10px;
+            font-size: 2rem;
+            margin-top: 10px;
+            color: white;
+         }
 
-.inc-button:active {
-    background-color: rgb(27, 94, 0);
-    color: rgb(235, 221, 33);
-}
+         .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+         }
 
-/* Bottom Message */
-.bottom-msg {
-    margin-top: 50px;
-    font-size: 0.9rem;
-    color: white;
-}
+         button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: var(--button-font-size);
+            transition: all 0.3s ease;
+            color: white;
+         }
 
-/* 📱 Mobile Responsive Styles */
-@media screen and (max-width: 768px) {
-    .counter-app-container {
-        width: 90vw;
-        height: auto;
-        padding: 20px;
-    }
+         button:active {
+            transform: scale(0.96);
+         }
 
-    .heading {
-        font-size: 1.5rem;
-    }
+         #inc-btn {
+            background-color: blue;
+            &:active {
+               background-color: darkblue;
+            }
+         }
 
-    #count-el {
-        font-size: 2.5rem;
-        width: 80px;
-    }
+         #save-btn {
+            background-color: green;
+            &:active {
+               background-color: darkgreen;
+            }
+         }
 
-    .inc-button {
-        font-size: 1.2em;
-        height: 2.5em;
-        width: 2.5em;
-    }
+         #rst-btn {
+            background-color: orange;
+            &:active {
+               background-color: darkorange;
+            }
+         }
 
-    .bottom-msg {
-        font-size: 0.8rem;
-    }
-}
+         #clr-rec-btn {
+            background-color: red;
+            padding: 8px 12px;
+            &:active {
+               background-color: darkred;
+            }
+         }
+
+         #save-el {
+            background-color: rgba(0, 0, 0, 0.7);
+            font-size: 1.2rem;
+            color: white;
+            border-radius: 5px;
+            padding: 7px 10px;
+            margin-top: 20px;
+         }
+
+         .record-container {
+            display: flex;
+            align-items: baseline;
+            margin-top: 10px;
+         }
