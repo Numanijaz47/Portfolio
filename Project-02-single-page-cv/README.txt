@@ -1,3 +1,3 @@
-https://github.com/Numanijaz47/Portfolio/tree/36012e46f321796a3143d88985363f0a7e1262e1/Project-02-single-page-cv
+
 
 https://roadmap.sh/projects/single-page-cv
