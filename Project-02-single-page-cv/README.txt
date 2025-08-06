@@ -1,1 +1,1 @@
-https://github.com/Numanijaz47/Portfolio/blob/main/Project-02-single-page-cv/index.html
+https://numanijaz47.github.io/Portfolio/Project-02-single-page-cv/index.html
