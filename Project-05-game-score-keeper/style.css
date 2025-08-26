@@ -31,6 +31,9 @@ body{
 
 @media screen and (min-width: 768px){
     .button{
+        height: 30%;
+        padding: 30% 10vw;
+        font-size: 20rem !important;
 
     }
 }
