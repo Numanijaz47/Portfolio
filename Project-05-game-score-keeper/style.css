@@ -29,11 +29,15 @@ body{
 
 }
 
-@media screen and (min-width: 768px){
+@media screen and (max-width: 768px){
     .button{
-        height: 30%;
-        padding: 30% 10vw;
-        font-size: 20rem !important;
+        padding
+        text-align: center;
 
+        
+    }
+
+    label{
+        font-size: 2rem;
     }
 }
