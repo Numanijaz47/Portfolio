@@ -13,3 +13,10 @@ function team_b() {
     scoreB += 1;
     teamBscore.textContent = scoreB;
 }
+
+function rst_btn() {
+    scoreA = 0;
+    scoreB = 0;
+    teamAscore.textContent = scoreA;
+    teamBscore.textContent = scoreB;
+}
