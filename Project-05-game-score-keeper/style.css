@@ -1,3 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Orbitron:regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,regular,500,600,700,800,900);
+
+:root {
+    --score-font: 'Orbitron', sans-serif;
+    --heading-font:'Roboto Slab', sans-serif;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -30,14 +38,48 @@ body{
 }
 
 @media screen and (max-width: 768px){
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    main{
+        height: 100vh;
+        width: 100%;
+    }
+
     .button{
-        padding
+        padding: 10px 100px;
         text-align: center;
+        font-size: 6em;
+        border: none;
+        border-radius: 10px;
+        font-weight: 900;
+        font-family: var(--score-font);
 
         
     }
 
+    #team-a{
+        background-color: red;
+        color: white;
+        margin-bottom: 20px;
+    }
+    #label-team-a{
+        transform: rotate(180deg);
+    }
+    #team-b{
+        background-color: blueviolet;
+        color: white;
+    }
+
     label{
-        font-size: 2rem;
+        font-size: 2.5rem;
+        font-weight: 800;
+        font-family: var(--heading-font);
+    }
+
+    .score-text{
+        transform: rotate(270deg);
     }
 }
