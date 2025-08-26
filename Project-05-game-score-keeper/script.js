@@ -4,9 +4,12 @@ let teamBscore = document.getElementById('team_b_score');
 let scoreA = 0;
 let scoreB = 0;
 
-
-
 function team_a() {
     scoreA += 1;
     teamAscore.textContent = scoreA;
+}
+
+function team_b() {
+    scoreB += 1;
+    teamBscore.textContent = scoreB;
 }
