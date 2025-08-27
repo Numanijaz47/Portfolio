@@ -1,7 +1,7 @@
 {
   "name": "Score Keeper",
   "short_name": "ScoreApp",
-  "start_url": "./Project-05-game-score-keeper/index.html",
+  "start_url": "https://score-counter-numan.netlify.app/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
