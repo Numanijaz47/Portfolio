@@ -73,6 +73,7 @@ html {
    }
    #section-01-div {
       height: 100vh;
+      background-color: purple;
    }
 
    .button {
