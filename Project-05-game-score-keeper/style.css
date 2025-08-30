@@ -70,10 +70,10 @@ html {
       justify-content: center;
       align-items: center;
       scroll-snap-align: start;
+      background-color: purple;
    }
    #section-01-div {
       height: 100vh;
-      background-color: purple;
    }
 
    .button {
