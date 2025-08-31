@@ -61,6 +61,7 @@ html {
       display: flex;
       flex-direction: column;
       scroll-snap-align: start;
+      background-color:#B47978;
    }
 
    #section-01 {
