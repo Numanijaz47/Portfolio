@@ -1,5 +1,6 @@
 let teamAscore = document.getElementById('team_a_score');
 let teamBscore = document.getElementById('team_b_score');
+let historyList = document.getElementById("score-history");
 
 let scoreA = 0;
 let scoreB = 0;
@@ -7,19 +8,23 @@ let scoreB = 0;
 let roundsA = 0;
 let roundsB = 0;
 let bestOf = 3; // default
+let roundNumber = 1;
 
+// Team A scores
 function team_a() {
     scoreA += 1;
     teamAscore.textContent = scoreA;
     twelve_goal_limit();
 }
 
+// Team B scores
 function team_b() {
     scoreB += 1;
     teamBscore.textContent = scoreB;
     twelve_goal_limit();
 }
 
+// Reset current round scores
 function rst_btn() {
     scoreA = 0;
     scoreB = 0;
@@ -30,6 +35,10 @@ function rst_btn() {
 // Set the "best of" value
 function setBestOf() {
     const inputVal = parseInt(document.getElementById('best-of').value);
+    if (isNaN(inputVal) || inputVal < 1) {
+        alert("Please enter a valid odd number (like 3, 5, 7).");
+        return;
+    }
     if (inputVal % 2 === 0) {
         alert("Please enter an odd number (like 3, 5, 7).");
         return;
@@ -37,34 +46,24 @@ function setBestOf() {
     bestOf = inputVal;
     roundsA = 0;
     roundsB = 0;
+    roundNumber = 1;
     rst_btn();
-
-    // clear history when starting a new game
-    document.getElementById("score-history").innerHTML = "";
-
     alert(`Game set to Best of ${bestOf}. First to ${Math.ceil(bestOf / 2)} rounds wins!`);
 }
 
 // Check round winner when someone reaches 12 goals
 function twelve_goal_limit() {
     if (scoreA === 12 || scoreB === 12) {
-        let roundWinner = "";
         if (scoreA === 12) {
             roundsA++;
-            roundWinner = `Team A won this round! (Rounds: A=${roundsA}, B=${roundsB})`;
-            alert(roundWinner);
+            addHistory(`Round ${roundNumber}: 🏆 Team A wins (${scoreA} - ${scoreB})`);
+            alert(`Team A wins this round! (Rounds: A=${roundsA}, B=${roundsB})`);
         } else {
             roundsB++;
-            roundWinner = `Team B won this round! (Rounds: A=${roundsA}, B=${roundsB})`;
-            alert(roundWinner);
+            addHistory(`Round ${roundNumber}: 🏆 Team B wins (${scoreB} - ${scoreA})`);
+            alert(`Team B wins this round! (Rounds: A=${roundsA}, B=${roundsB})`);
         }
-
-        // Append to history list
-        const historyList = document.getElementById("score-history");
-        const li = document.createElement("li");
-        li.textContent = roundWinner;
-        historyList.appendChild(li);
-
+        roundNumber++;
         rst_btn();
         checkGameWinner();
     }
@@ -75,11 +74,34 @@ function checkGameWinner() {
     const needed = Math.ceil(bestOf / 2);
     if (roundsA === needed) {
         alert(`🏆 Team A wins the Best of ${bestOf} game!`);
-        roundsA = roundsB = 0;
-        document.getElementById("score-history").innerHTML = ""; // clear after match
+        addEndGameDivider();
+        resetGameStats();
     } else if (roundsB === needed) {
         alert(`🏆 Team B wins the Best of ${bestOf} game!`);
-        roundsA = roundsB = 0;
-        document.getElementById("score-history").innerHTML = ""; // clear after match
+        addEndGameDivider();
+        resetGameStats();
     }
+}
+
+// Reset after game finishes
+function resetGameStats() {
+    roundsA = 0;
+    roundsB = 0;
+    roundNumber = 1;
+    rst_btn();
+}
+
+// Add history line
+function addHistory(text) {
+    const li = document.createElement("li");
+    li.textContent = text;
+    historyList.appendChild(li);
+}
+
+// Add divider only at end of game
+function addEndGameDivider() {
+    const divider = document.createElement("li");
+    divider.textContent = "🏁 End of Game 🏁";
+    divider.classList.add("end-divider");
+    historyList.appendChild(divider);
 }

@@ -181,5 +181,16 @@ color:white;
    border-radius: 6px;
 }
 
+#score-history li.divider {
+   margin: 12px 0;
+   padding: 6px;
+   text-align: center;
+   color: #ffcc00;
+   font-weight: 700;
+   font-size: 1.1rem;
+   border-top: 2px dashed rgba(255,255,255,0.4);
+   border-bottom: 2px dashed rgba(255,255,255,0.4);
+}
+
 }
 
