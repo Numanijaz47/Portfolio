@@ -1,0 +1,6 @@
+2025/09/08-00:07:10.680 314c Reusing MANIFEST U:\GitHub\Portfolio\Project-03-Tasbeeh-counter\.vscode\vsedge\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2025/09/08-00:07:10.682 314c Recovering log #8
+2025/09/08-00:07:10.682 314c Reusing old log U:\GitHub\Portfolio\Project-03-Tasbeeh-counter\.vscode\vsedge\Default\EdgeCoupons/coupons_data.db/000008.log 
+2025/09/08-00:07:10.781 310c Level-0 table #12: started
+2025/09/08-00:07:10.785 310c Level-0 table #12: 672220 bytes OK
+2025/09/08-00:07:10.787 310c Delete type=0 #8

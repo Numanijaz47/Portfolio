@@ -1,0 +1,144 @@
+@import url(https://fonts.googleapis.com/css?family=Orbitron:regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,regular,500,600,700,800,900);
+
+:root {
+   --score-font: "Orbitron", sans-serif;
+   --heading-font: "Roboto Slab", sans-serif;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body,
+html {
+   height: 100vh;
+   width: 100%;
+}
+
+#section-00 {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   row-gap: 20px;
+   height: 100vh;
+   width: 100%;
+}
+
+#section-01 {
+   height: 100vh;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.button {
+   height: 30%;
+   padding: 30% 20vw;
+}
+
+@media screen and (max-width: 768px) {
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+   }
+
+   body,
+   html {
+      scroll-behavior: smooth; /* Smooth scrolling */
+      scroll-snap-type: y mandatory; /* Y-axis snap scrolling */
+      overflow-y: scroll;
+   }
+
+   #section-00 {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      scroll-snap-align: start;
+      background-color:#1E2019;
+      /* background-color:greenyellow; */
+   }
+
+   #section-01 {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      scroll-snap-align: start;
+      background-color: purple;
+   }
+
+   #section-01 input{
+      width: 50px;
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 10px;
+      border-radius: 10px;
+      padding: 30px;
+   }
+   
+   #section-01-div {
+      height: 100vh;
+   }
+
+   .button {
+      padding: 10px 100px;
+      text-align: center;
+      font-size: 6em;
+      border: none;
+      border-radius: 10px;
+      font-weight: 900;
+      font-family: var(--score-font);
+   }
+
+   #team-a {
+      background-color: red;
+      color: white;
+      margin-bottom: 20px;
+   }
+   #label-team-a {
+      transform: rotate(180deg);
+   }
+   #team-b {
+      background-color: blueviolet;
+      color: white;
+   }
+
+   label {
+      font-size: 2.5rem;
+      font-weight: 800;
+      font-family: var(--heading-font);
+color:white;
+   }
+
+   .score-text {
+      transform: rotate(270deg);
+   }
+
+   .bottom-area {
+      display: flex;
+      /* align-items: stretch; */
+      justify-content: space-evenly;
+      width: 100%;
+   }
+   #reset-btn {
+      /* width: ; */
+      padding: 10px;
+      border: 1px solid;
+      border-radius: 50%;
+      background-color: black;
+      color: white;
+   }
+   h2{
+       color:antiquewhite;
+   }
+}
+

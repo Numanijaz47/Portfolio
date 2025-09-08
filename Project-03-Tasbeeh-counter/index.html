@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <link rel="stylesheet" href="/css/style.css"/>
+   </head>
+   <body>
+      <section id="section01">
+         <!-- section 01 -->
+         <div class="container" id="container01">
+            <h1 id="title">TASBEEH COUNT</h1>
+            <h2 id="count-el">0</h2>
+            <div class="button-container">
+               <button id="inc-btn" name="increment-button" onclick="incFunc()">
+                  Increment
+               </button>
+               <button id="save-btn" name="save-button" onclick="saveFunc()">
+                  Save
+               </button>
+               <button id="rst-btn" name="reset-button" onclick="resetFunc()">
+                  Reset Count
+               </button>
+            </div>
+            <div class="record-container">
+               <p id="save-el" data-original="Record : " >Record : </p>
+               <button id="clr-rec-btn" onclick="clrRecFunc()"> Clear Record</button>
+            </div>
+
+         </div>
+      </section>
+
+      <section id="section02"><!-- section 02 --></section>
+
+      <!-- js file -->
+      <script src="js/script.js"></script>
+   </body>
+</html>

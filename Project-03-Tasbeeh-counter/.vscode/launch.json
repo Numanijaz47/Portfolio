@@ -1,0 +1,65 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        
+        {
+            "type": "pwa-msedge",
+            "name": "Launch Microsoft Edge",
+            "request": "launch",
+            "runtimeArgs": [
+                "--remote-debugging-port=9222",
+                "--user-data-dir=${workspaceFolder}/.vscode/vsedge"
+            ],
+            "url": "c:\\Users\\iamsw\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.9\\out\\startpage\\index.html", 
+            "presentation": {
+                "hidden": false,
+                "group": "edge",
+                "order": 1
+            }
+        },
+        {
+            "type": "pwa-msedge",
+            "name": "Launch Microsoft Edge in headless mode",
+            "request": "launch",
+            "runtimeArgs": [
+                "--headless",
+                "--remote-debugging-port=9222",
+                "--user-data-dir=${workspaceFolder}/.vscode/vsedge"
+            ],
+            "url": "file://u:\\GitHub\\Portfolio\\Project-03-Tasbeeh-counter\\index.html",
+            "presentation": {
+                "hidden": false,
+                "group": "edge",
+                "order": 2
+            }
+        },
+        {
+            "type": "vscode-edge-devtools.debug",
+            "name": "Open Edge DevTools",
+            "request": "attach",
+            "url": "c:\\Users\\iamsw\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.9\\out\\startpage\\index.html", 
+            "presentation": {
+                "hidden": false,
+                "group": "edge",
+                "order": 3
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Launch Edge Headless and attach DevTools",
+            "configurations": [
+                "Launch Microsoft Edge in headless mode",
+                "Open Edge DevTools"
+            ]
+        },
+        {
+            "name": "Launch Edge and attach DevTools",
+            "configurations": [
+                "Launch Microsoft Edge",
+                "Open Edge DevTools"
+            ]
+        }
+    ]
+}
