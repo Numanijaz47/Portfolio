@@ -77,12 +77,20 @@ html {
    }
 
    #section-01 input{
-      width: 50px;
+      width: 100px;
       font-size: 1.5rem;
       text-align: center;
       margin: 10px;
       border-radius: 10px;
-      padding: 30px;
+   }
+   #section-01 button{
+      padding: 10px 20px;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 10px;
+      background-color: darkorange;
+      color: white;
+      font-weight: 800;
    }
    
    #section-01-div {
