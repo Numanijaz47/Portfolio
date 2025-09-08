@@ -1,3 +1,32 @@
+// PWA Cache Management & Reload
+async function clearCacheAndReload() {
+  if ('serviceWorker' in navigator && navigator.serviceWorker.ready) {
+    const registration = await navigator.serviceWorker.ready;
+    await registration.unregister();
+    caches.keys().then(function(names) {
+      for (let name of names) {
+        caches.delete(name);
+      }
+    });
+    window.location.reload();
+  }
+}
+
+// Automatically clear cache and reload every 24 hours
+setInterval(clearCacheAndReload, 24 * 60 * 60 * 1000); // 24 hours = 86,400,000 milliseconds
+
+// Add a button in your HTML with id="clearCacheButton" to manually trigger this function.
+// e.g., <button id="clearCacheButton">Clear Cache & Reload</button>
+document.addEventListener('DOMContentLoaded', () => {
+  const clearCacheBtn = document.getElementById('clearCacheButton');
+  if (clearCacheBtn) {
+    clearCacheBtn.addEventListener('click', clearCacheAndReload);
+  }
+});
+// End of PWA Cache Management & Reload
+
+// --- Your Existing Score Counter Logic Below ---
+
 let teamAscore = document.getElementById('team_a_score');
 let teamBscore = document.getElementById('team_b_score');
 let historyList = document.getElementById("score-history");
