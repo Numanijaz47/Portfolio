@@ -1,6 +1,6 @@
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open('score-cache-v1').then(cache => {
+    caches.open('score-cache-v1.1').then(cache => {
       return cache.addAll([
         '/',
         '/index.html',
