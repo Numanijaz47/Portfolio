@@ -1,5 +1,5 @@
 // PWA Cache Management & Reload
-async function clearCacheAndReload() {
+async function clearCacheAndShowMessage() {
   if ('serviceWorker' in navigator && navigator.serviceWorker.ready) {
     const registration = await navigator.serviceWorker.ready;
     await registration.unregister();
@@ -8,22 +8,34 @@ async function clearCacheAndReload() {
         caches.delete(name);
       }
     });
-    window.location.reload();
+
+    // Get the message element and display it
+    const updateMessage = document.getElementById('update-message');
+    if (updateMessage) {
+      updateMessage.style.display = 'block';
+    }
+    
+    // You can also add a slight delay and then reload for a more automated flow.
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000); // Reload after 2 seconds
   }
 }
 
 // Automatically clear cache and reload every 24 hours
-setInterval(clearCacheAndReload, 24 * 60 * 60 * 1000); // 24 hours = 86,400,000 milliseconds
+// You can keep this part if you want an automatic update as a fallback.
+setInterval(() => {
+    clearCacheAndShowMessage();
+    // window.location.reload(); // Uncomment if you want automatic reload
+}, 24 * 60 * 60 * 1000); // 24 hours
 
 // Add a button in your HTML with id="clearCacheButton" to manually trigger this function.
-// e.g., <button id="clearCacheButton">Clear Cache & Reload</button>
 document.addEventListener('DOMContentLoaded', () => {
   const clearCacheBtn = document.getElementById('clearCacheButton');
   if (clearCacheBtn) {
-    clearCacheBtn.addEventListener('click', clearCacheAndReload);
+    clearCacheBtn.addEventListener('click', clearCacheAndShowMessage);
   }
 });
-// End of PWA Cache Management & Reload
 
 // --- Your Existing Score Counter Logic Below ---
 
