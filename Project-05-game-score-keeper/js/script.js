@@ -38,19 +38,33 @@ function setBestOf() {
     roundsA = 0;
     roundsB = 0;
     rst_btn();
+
+    // clear history when starting a new game
+    document.getElementById("score-history").innerHTML = "";
+
     alert(`Game set to Best of ${bestOf}. First to ${Math.ceil(bestOf / 2)} rounds wins!`);
 }
 
 // Check round winner when someone reaches 12 goals
 function twelve_goal_limit() {
     if (scoreA === 12 || scoreB === 12) {
+        let roundWinner = "";
         if (scoreA === 12) {
             roundsA++;
-            alert(`Team A wins this round! (Rounds: A=${roundsA}, B=${roundsB})`);
+            roundWinner = `Team A won this round! (Rounds: A=${roundsA}, B=${roundsB})`;
+            alert(roundWinner);
         } else {
             roundsB++;
-            alert(`Team B wins this round! (Rounds: A=${roundsA}, B=${roundsB})`);
+            roundWinner = `Team B won this round! (Rounds: A=${roundsA}, B=${roundsB})`;
+            alert(roundWinner);
         }
+
+        // Append to history list
+        const historyList = document.getElementById("score-history");
+        const li = document.createElement("li");
+        li.textContent = roundWinner;
+        historyList.appendChild(li);
+
         rst_btn();
         checkGameWinner();
     }
@@ -62,8 +76,10 @@ function checkGameWinner() {
     if (roundsA === needed) {
         alert(`🏆 Team A wins the Best of ${bestOf} game!`);
         roundsA = roundsB = 0;
+        document.getElementById("score-history").innerHTML = ""; // clear after match
     } else if (roundsB === needed) {
         alert(`🏆 Team B wins the Best of ${bestOf} game!`);
         roundsA = roundsB = 0;
+        document.getElementById("score-history").innerHTML = ""; // clear after match
     }
 }
