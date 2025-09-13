@@ -5,8 +5,8 @@ self.addEventListener('install', event => {
         '/',
         '/index.html',
         '/manifest.json', // Manifest file
-        '/css/style.css',
-        '/js/script.js',
+        'css/style.css',
+        'js/script.js',
         '/icon-192.png',
         '/icon-512.png',
         // Caching Bootstrap & Icons from CDN
