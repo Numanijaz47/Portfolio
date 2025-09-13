@@ -1,40 +1,34 @@
 // PWA Cache Management & Reload
 async function clearCacheAndShowMessage() {
-  if ('serviceWorker' in navigator && navigator.serviceWorker.ready) {
-    const registration = await navigator.serviceWorker.ready;
-    await registration.unregister();
-    caches.keys().then(function(names) {
-      for (let name of names) {
-        caches.delete(name);
-      }
-    });
+    if ('serviceWorker' in navigator && navigator.serviceWorker.ready) {
+        const registration = await navigator.serviceWorker.ready;
+        await registration.unregister();
+        caches.keys().then(function (names) {
+            for (let name of names) {
+                caches.delete(name);
+            }
+        });
 
-    // Get the message element and display it
-    const updateMessage = document.getElementById('update-message');
-    if (updateMessage) {
-      updateMessage.style.display = 'block';
+        const updateMessage = document.getElementById('update-message');
+        if (updateMessage) {
+            updateMessage.style.display = 'block';
+        }
+
+        setTimeout(() => {
+            window.location.reload();
+        }, 2000);
     }
-    
-    // You can also add a slight delay and then reload for a more automated flow.
-    setTimeout(() => {
-      window.location.reload();
-    }, 2000); // Reload after 2 seconds
-  }
 }
 
-// Automatically clear cache and reload every 24 hours
-// You can keep this part if you want an automatic update as a fallback.
 setInterval(() => {
     clearCacheAndShowMessage();
-    // window.location.reload(); // Uncomment if you want automatic reload
-}, 24 * 60 * 60 * 1000); // 24 hours
+}, 24 * 60 * 60 * 1000);
 
-// Add a button in your HTML with id="clearCacheButton" to manually trigger this function.
 document.addEventListener('DOMContentLoaded', () => {
-  const clearCacheBtn = document.getElementById('clearCacheButton');
-  if (clearCacheBtn) {
-    clearCacheBtn.addEventListener('click', clearCacheAndShowMessage);
-  }
+    const clearCacheBtn = document.getElementById('clearCacheButton');
+    if (clearCacheBtn) {
+        clearCacheBtn.addEventListener('click', clearCacheAndShowMessage);
+    }
 });
 
 // --- Your Existing Score Counter Logic Below ---
@@ -48,24 +42,21 @@ let scoreB = 0;
 
 let roundsA = 0;
 let roundsB = 0;
-let bestOf = 3; // default
+let bestOf = 3;
 let roundNumber = 1;
 
-// Team A scores
 function team_a() {
     scoreA += 1;
     teamAscore.textContent = scoreA;
     twelve_goal_limit();
 }
 
-// Team B scores
 function team_b() {
     scoreB += 1;
     teamBscore.textContent = scoreB;
     twelve_goal_limit();
 }
 
-// Reset current round scores
 function rst_btn() {
     scoreA = 0;
     scoreB = 0;
@@ -73,7 +64,6 @@ function rst_btn() {
     teamBscore.textContent = scoreB;
 }
 
-// Set the "best of" value
 function setBestOf() {
     const inputVal = parseInt(document.getElementById('best-of').value);
     if (isNaN(inputVal) || inputVal < 1) {
@@ -92,7 +82,6 @@ function setBestOf() {
     alert(`Game set to Best of ${bestOf}. First to ${Math.ceil(bestOf / 2)} rounds wins!`);
 }
 
-// Check round winner when someone reaches 12 goals
 function twelve_goal_limit() {
     if (scoreA === 12 || scoreB === 12) {
         if (scoreA === 12) {
@@ -110,7 +99,6 @@ function twelve_goal_limit() {
     }
 }
 
-// Check if the match is over
 function checkGameWinner() {
     const needed = Math.ceil(bestOf / 2);
     if (roundsA === needed) {
@@ -124,7 +112,6 @@ function checkGameWinner() {
     }
 }
 
-// Reset after game finishes
 function resetGameStats() {
     roundsA = 0;
     roundsB = 0;
@@ -132,14 +119,12 @@ function resetGameStats() {
     rst_btn();
 }
 
-// Add history line
 function addHistory(text) {
     const li = document.createElement("li");
     li.textContent = text;
     historyList.appendChild(li);
 }
 
-// Add divider only at end of game
 function addEndGameDivider() {
     const divider = document.createElement("li");
     divider.textContent = "🏁 End of Game 🏁";
