@@ -105,6 +105,15 @@ html {
       border-radius: 10px;
       font-weight: 900;
       font-family: var(--score-font);
+      &:active{
+         transform: scale(90%);
+         transition: all 0.2s ease-in-out;
+      }
+   }
+
+   #clearCacheButton:active {
+      transform: scale(90%);
+      transition: all 0.2s ease-in-out;
    }
 
    #team-a {
