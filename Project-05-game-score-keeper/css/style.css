@@ -117,6 +117,7 @@ html {
       border-radius: 10px;
       font-weight: 900;
       font-family: var(--score-font);
+      box-shadow: 0 0 30px rgba(218, 192, 32, 0.8);
       &:active{
          transform: scale(90%);
          transition: all 0.2s ease-in-out;
@@ -129,7 +130,7 @@ html {
    }
 
    #team-a {
-      background-color: red;
+      background-color: rgba(255, 0, 0, 0.8);
       color: white;
       margin-bottom: 20px;
    }
@@ -137,7 +138,7 @@ html {
       transform: rotate(180deg);
    }
    #team-b {
-      background-color: goldenrod;
+      background-color: rgba(218, 192, 32, 0.8);
       color: white;
    }
 
