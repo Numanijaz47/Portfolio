@@ -26,6 +26,7 @@ html {
    row-gap: 20px;
    height: 100vh;
    width: 100%;
+   margin-top: -30px;
 }
 
 #section-01 {
@@ -41,6 +42,9 @@ html {
    padding: 30% 20vw;
 }
 
+
+/* CSS FOR MOBILE VIEW  */
+
 @media screen and (max-width: 768px) {
    * {
       margin: 0;
@@ -55,13 +59,21 @@ html {
       overflow-y: scroll;
    }
 
+   body{
+      background-image: url(../Images/table-bg.webp);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+   }
+
    #section-00 {
       height: 100vh;
       width: 100%;
       display: flex;
       flex-direction: column;
       scroll-snap-align: start;
-      background-color:#1E2019;
+      /* background-color:#1E2019; */
       /* background-color:greenyellow; */
    }
 
@@ -73,7 +85,7 @@ html {
       justify-content: center;
       align-items: center;
       scroll-snap-align: start;
-      background-color: purple;
+      /* background-color: purple; */
    }
 
    #section-01 input{
@@ -94,7 +106,7 @@ html {
    }
    
    #section-01-div {
-      height: 100vh;
+      height: 95vh;
    }
 
    .button {
