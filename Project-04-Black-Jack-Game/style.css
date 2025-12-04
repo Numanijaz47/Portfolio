@@ -1,9 +1,9 @@
-@root
+
 
 
 *{
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     box-sizing:border-box;
 }
 
@@ -24,16 +24,18 @@ body{
     text-align: center;
 }
 
+/* is container me game hai */
 .container-1{
     width: 50%;
     min-width: 300px;
     max-width: 500px;
-    height: auto;
+    height: auto; 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    column-gap: 10px;
+    column-gap: 5px;
+    row-gap: 20px;;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
@@ -45,7 +47,22 @@ h1{
     color: goldenrod;
 }
 
-#message-el{
 
+/* Start Game Button */
+#strt-btn{ 
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-color: goldenrod;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgb(218, 165, 32);
+    transition: background-color 0.3s ease;
+    &:active{
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
 }
 
